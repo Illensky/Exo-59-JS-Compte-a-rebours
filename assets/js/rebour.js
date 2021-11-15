@@ -9,7 +9,7 @@ function start() {
 
 function finish() {
     clearInterval(interval);
-    timer.innerHTML = "TERMINE!";
+    timer.innerHTML = "0";
 }
 
 function sec() {
