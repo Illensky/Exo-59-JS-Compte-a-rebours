@@ -4,20 +4,15 @@ let interval = null
 
 
 function start() {
-    interval = setInterval(sec, 1000);
+    interval = setInterval(() => {
+        if (seconds > 0) {
+            seconds--;
+            timer.innerHTML = seconds + " secondes restantes";
+            start()
+        }
+        clearInterval(interval);
+    }, 1000);
 }
 
-function finish() {
-    clearInterval(interval);
-    timer.innerHTML = "0";
-}
-
-function sec() {
-    seconds--;
-    if(seconds === 0) finish();
-    else {
-        timer.innerHTML = seconds + " secondes restantes";
-    }
-}
 
 start()
